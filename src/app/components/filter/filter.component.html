@@ -1,0 +1,65 @@
+<mat-toolbar color="primary">
+  Doug's Car Lot
+</mat-toolbar>
+<mat-card>
+  <div style="padding-left: 5px">
+    Search a car by selecting from the properties below.
+  </div>
+  <mat-card-content>
+    <form #carForm="ngForm">
+      <div class="flex-items-row">
+        <div style="flex:1">
+          <mat-form-field class="form-select">
+            <mat-select name="make" [(ngModel)]="model.make" placeholder="Car Make" #make="ngModel">
+              <mat-option  *ngFor="let make of carMake" [value]="make" ngDefaultControl>
+                {{make}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div style="flex:1">
+          <mat-form-field class="form-select">
+            <mat-select name="year"  [(ngModel)]="model.year" placeholder="Year" #year="ngModel">
+              <mat-option  *ngFor="let year of carYear" [value]="year" ngDefaultControl>
+                {{year}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div style="flex:1">
+          <mat-form-field class="form-select">
+            <mat-select name="color" [(ngModel)]="model.color" placeholder="Color">
+              <mat-option   *ngFor="let color of carColor" [value]="color" ngDefaultControl>
+                {{color}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="flex-items-column">
+
+          <mat-checkbox [value]="model.hasSunroof" (change)="selChk(model.hasSunroof, 'hasSunroof')" [(ngModel)]="model.hasSunroof" name="hasSunroof" class="form-checkbox">Sunroof</mat-checkbox>
+
+          <mat-checkbox [value]="model.isFourWheelDrive" (change)="selChk(model.isFourWheelDrive, 'isFourWheelDrive')" [(ngModel)]="model.isFourWheelDrive" name="isFourWheelDrive" class="form-checkbox">Four Wheel Drive</mat-checkbox>
+
+          <mat-checkbox [value]="model.hasLowMiles" (change)="selChk(model.hasLowMiles,'hasLowMiles')" [(ngModel)]="model.hasLowMiles" name="hasLowMiles" class="form-checkbox">Low Miles</mat-checkbox>
+
+          <mat-checkbox [value]="model.hasPowerWindows" (change)="selChk(model.hasPowerWindows, 'hasPowerWindows')" [(ngModel)]="model.hasPowerWindows" name="hasPowerWindows" class="form-checkbox">Power Windows</mat-checkbox>
+
+          <mat-checkbox [value]="model.hasNavigation" (change)="selChk(model.hasNavigation, 'hasNavigation')" [(ngModel)]="model.hasNavigation" name="hasNavigation" class="form-checkbox">Built in Navigation</mat-checkbox>
+
+          <mat-checkbox [value]="model.hasHeatedSeats" (change)="selChk(model.hasHeatedSeats, 'hasHeatedSeats')" [(ngModel)]="model.hasHeatedSeats"  name="hasHeatedSeats" class="form-checkbox">Heated Seats</mat-checkbox>
+      </div>
+
+      <div class="button-group">
+        <button (click)="searchAll()" mat-raised-button type="submit" color="primary" class="btn btn-success">Specific Search</button>
+        <button (click)="searchSome()" mat-raised-button type="submit" color="accent" class="btn btn-warning">Match Some Properties</button>
+        <button (click)="reset()" mat-raised-button color="warn" class="btn btn-danger">Reset</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<app-table [flag]="flag" [filteredOptions]="filteredCarOptions" [carModelKeys]="modelKeys"></app-table>

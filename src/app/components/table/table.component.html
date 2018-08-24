@@ -1,0 +1,11 @@
+<table *ngIf="flag" mat-table [dataSource]="filteredOptions" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container  *ngFor="let key of carModelKeys" matColumnDef="{{key}}">
+    <th mat-header-cell *matHeaderCellDef> {{key | camelToHuman}} </th>
+    <td mat-cell *matCellDef="let option"> {{option[key]}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="carModelKeys"></tr>
+  <tr mat-row *matRowDef="let row; columns: carModelKeys;"></tr>
+</table>
