@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {CamelToHumanPipe} from '../../pipes/camelToHuman.pipe';
+import { CamelToHumanPipe } from '../../pipes/camelToHuman.pipe';
 import { TableComponent } from './table.component';
 
 import {

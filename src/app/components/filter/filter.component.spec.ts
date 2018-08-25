@@ -8,7 +8,7 @@ import {
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {RetrieveCarDataService} from '../../services/retreieve-car-data.service';
+import {RetrieveCarDataService} from '../../services/retrieve-car-data.service';
 import {HttpClientModule} from '@angular/common/http';
 
 describe('FilterComponent', () => {
@@ -52,4 +52,5 @@ describe('FilterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

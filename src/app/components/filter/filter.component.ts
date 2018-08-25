@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { RetrieveCarDataService } from '../../services/retreieve-car-data.service';
 import { CarOptions } from '../../models/carOptionsModel';
+import { RetrieveCarDataService } from '../../services/retrieve-car-data.service';
 
 @Component({
   selector: 'app-filter',
