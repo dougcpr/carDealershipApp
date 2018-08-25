@@ -24,3 +24,7 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.instructions {
+    padding-left: 5px;
+}

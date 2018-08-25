@@ -10,11 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCardModule,
-  MatCheckboxModule, MatFormFieldModule, MatOptionModule, MatRadioModule,
+  MatCheckboxModule, MatFormFieldModule, MatIconModule, MatOptionModule, MatRadioModule,
   MatSelectModule, MatTableModule, MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CamelToHumanPipe} from './pipes/camelToHuman.pipe';
+import { CardLayoutComponent } from './layouts/card-layout/card-layout.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {CamelToHumanPipe} from './pipes/camelToHuman.pipe';
     HomeComponent,
     FilterComponent,
     TableComponent,
-    CamelToHumanPipe
+    CamelToHumanPipe,
+    CardLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import {CamelToHumanPipe} from './pipes/camelToHuman.pipe';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatRadioModule,
+    MatIconModule,
     MatFormFieldModule,
     MatCardModule,
     MatOptionModule,

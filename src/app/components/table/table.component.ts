@@ -7,11 +7,18 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TableComponent implements OnInit {
   @Input('filteredOptions') filteredOptions;
-  @Input('carModelKeys') carModelKeys;
-  @Input('flag') flag;
+  @Input('searchParams') searchParams;
+  @Input('keys') keys;
   constructor() { }
 
   ngOnInit() {
+  }
+  alterColor (key, value) {
+    if (this.searchParams.includes(key)) {
+      if (value) {
+        return '#90EE90';
+      }
+    }
   }
 
 }

@@ -1,11 +1,21 @@
-<table *ngIf="flag" mat-table [dataSource]="filteredOptions" class="mat-elevation-z8">
+<table *ngIf="filteredOptions" mat-table [dataSource]="filteredOptions" class="mat-elevation-z8">
 
   <!-- Position Column -->
-  <ng-container  *ngFor="let key of carModelKeys" matColumnDef="{{key}}">
+  <ng-container  *ngFor="let key of keys" matColumnDef="{{key}}">
     <th mat-header-cell *matHeaderCellDef> {{key | camelToHuman}} </th>
-    <td mat-cell *matCellDef="let option"> {{option[key]}} </td>
+    <td mat-cell [ngStyle]="{'background-color': alterColor(key, option[key])}" *matCellDef="let option">
+        <div *ngIf="option[key] === true ">
+            <mat-icon>check</mat-icon>
+        </div>
+        <div *ngIf="!option[key]">
+            <mat-icon>clear</mat-icon>
+        </div>
+        <div *ngIf="option[key] !== true && option[key] !== false">
+            {{option[key]}}
+        </div>
+    </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="carModelKeys"></tr>
-  <tr mat-row *matRowDef="let row; columns: carModelKeys;"></tr>
+  <tr mat-header-row *matHeaderRowDef="keys"></tr>
+  <tr mat-row *matRowDef="let row; columns: keys;"></tr>
 </table>

@@ -1,0 +1,14 @@
+<div class="center">
+    <mat-toolbar color="primary">
+       {{title}}
+    </mat-toolbar>
+    <mat-card>
+        <div class="instructions">
+            Search a car by selecting from the properties below.
+        </div>
+        <mat-card-content>
+            <ng-content ></ng-content>
+        </mat-card-content>
+    </mat-card>
+    <ng-content select="app-table"></ng-content>
+</div>

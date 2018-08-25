@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { RetrieveCarDataService } from '../../services/retreieve-car-data.service';
 import { CarOptions } from '../../models/carOptionsModel';
 
@@ -16,6 +16,10 @@ export class FilterComponent implements OnInit {
   carMake = [];
   carYear = [];
   carColor = [];
+  @Input('title') title;
+  @Output() carProperties = new EventEmitter();
+  @Output() searchParams = new EventEmitter();
+  @Output() keys = new EventEmitter();
   model = new CarOptions(null, null, null, null, null, null, null, null, null);
   constructor(
     private carDataService: RetrieveCarDataService
@@ -49,27 +53,30 @@ export class FilterComponent implements OnInit {
       });
   }
 
+  // will search by using all of the properties
   searchAll () {
     this.flag = true;
     this.carDataService.searchForAllMatchingResults(this.model)
       .subscribe((data) => {
-        this.modelKeys = this.parseKeysOfModel(this.model);
-        this.filteredCarOptions = data;
+        this.keys.emit(Object.keys(this.carData[0]));
+        this.carProperties.emit(data);
+        this.searchParams.emit(this.parseKeysOfModel(this.model));
       });
   }
+  // will search by using some of the properties
   searchSome () {
     this.flag = true;
     this.carDataService.searchForSomeMatchingResults(this.model)
       .subscribe((data) => {
-        this.modelKeys = this.parseKeysOfModel(this.model);
-        this.filteredCarOptions = data;
+        this.keys.emit(Object.keys(this.carData[0]));
+        this.carProperties.emit(data);
+        this.searchParams.emit(this.parseKeysOfModel(this.model));
       });
   }
   reset () {
     this.model = new CarOptions(null, null, null, null, null, null, null, null, null);
     this.filteredCarOptions = [];
     this.modelKeys = [];
-    this.flag = false;
   }
   parseKeysOfModel(model) {
     const keys = Object.keys(model);
