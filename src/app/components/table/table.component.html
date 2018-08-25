@@ -1,6 +1,5 @@
 <table *ngIf="filteredOptions.length > 0" mat-table [dataSource]="filteredOptions" class="mat-elevation-z8">
 
-  <!-- Position Column -->
   <ng-container  *ngFor="let key of keys" matColumnDef="{{key}}">
     <th mat-header-cell *matHeaderCellDef> {{key | camelToHuman}} </th>
     <td mat-cell [ngStyle]="{'background-color': alterColor(key, option[key])}" *matCellDef="let option">

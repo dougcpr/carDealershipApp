@@ -73,6 +73,7 @@ export class FilterComponent implements OnInit {
         this.searchParams.emit(this.model);
       });
   }
+  // reset the search parameters
   reset () {
     this.model = new CarOptions(null, null, null, null, null, null, null, null, null);
     this.filteredCarOptions = [];
@@ -81,7 +82,7 @@ export class FilterComponent implements OnInit {
 
 
   selChk (val, name) {
-    // if the value was unchecked, remove it from the model
+    // if the checkbox was unchecked, remove it from the model
     // the default method keeps it in the model
     // and ruins of only looking for what was asked for
     if (!val) {

@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1af8860-773b-4ff2-b4bb-1a24e7f950be" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/services/retreieve-car-data.service.spec.ts" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/app.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/filter/filter.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/filter/filter.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/table/table.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/table/table.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/table/table.component.ts" afterPath="$PROJECT_DIR$/src/app/components/table/table.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/home.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/home/home.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layouts/card-layout/card-layout.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/layouts/card-layout/card-layout.component.spec.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -242,74 +235,6 @@
               <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="table" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="card-layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="carDealershipApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="carDealershipApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pipes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -354,19 +279,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535154827869</updated>
-      <workItem from="1535154829409" duration="10917000" />
+      <workItem from="1535154829409" duration="11091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10917000" />
+    <option name="totallyTimeSpent" value="11091000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="841" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
