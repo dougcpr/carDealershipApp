@@ -1,4 +1,4 @@
-<table *ngIf="filteredOptions" mat-table [dataSource]="filteredOptions" class="mat-elevation-z8">
+<table *ngIf="filteredOptions.length > 0" mat-table [dataSource]="filteredOptions" class="mat-elevation-z8">
 
   <!-- Position Column -->
   <ng-container  *ngFor="let key of keys" matColumnDef="{{key}}">
@@ -19,3 +19,7 @@
   <tr mat-header-row *matHeaderRowDef="keys"></tr>
   <tr mat-row *matRowDef="let row; columns: keys;"></tr>
 </table>
+
+<mat-card class="no-results" *ngIf="filteredOptions.length === 0 && keys.length > 1">
+    There are no results found.
+</mat-card>

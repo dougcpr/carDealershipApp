@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TableComponent implements OnInit {
   @Input('filteredOptions') filteredOptions;
   @Input('searchParams') searchParams;
+  @Input('query') query;
   @Input('keys') keys;
   constructor() { }
 
@@ -15,10 +16,12 @@ export class TableComponent implements OnInit {
   }
   alterColor (key, value) {
     if (this.searchParams.includes(key)) {
-      if (value) {
+      if (this.query[key] === value) {
         return '#90EE90';
+      } else {
+        return 'lightblue';
       }
-    }
+      }
   }
 
 }

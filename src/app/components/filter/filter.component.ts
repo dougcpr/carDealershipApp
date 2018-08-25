@@ -35,13 +35,11 @@ export class FilterComponent implements OnInit {
             this.carMake.push(element.make);
           }
         });
-        // comment about back end
         this.carData.map((element) => {
           if (!this.carYear.includes(element.year)) {
             this.carYear.push(element.year);
           }
         });
-        // comment about back end
         this.carData.map((element) => {
           if (!this.carColor.includes(element.color)) {
             this.carColor.push(element.color);
@@ -53,24 +51,26 @@ export class FilterComponent implements OnInit {
       });
   }
 
-  // will search by using all of the properties
+  // matches against ALL of the properties
   searchAll () {
     this.flag = true;
     this.carDataService.searchForAllMatchingResults(this.model)
       .subscribe((data) => {
+        // emit the objects to the home component,
+        // so you can import them into the table
         this.keys.emit(Object.keys(this.carData[0]));
         this.carProperties.emit(data);
-        this.searchParams.emit(this.parseKeysOfModel(this.model));
+        this.searchParams.emit(this.model);
       });
   }
-  // will search by using some of the properties
+  // matches against SOME of the properties
   searchSome () {
     this.flag = true;
     this.carDataService.searchForSomeMatchingResults(this.model)
       .subscribe((data) => {
         this.keys.emit(Object.keys(this.carData[0]));
         this.carProperties.emit(data);
-        this.searchParams.emit(this.parseKeysOfModel(this.model));
+        this.searchParams.emit(this.model);
       });
   }
   reset () {
@@ -78,18 +78,7 @@ export class FilterComponent implements OnInit {
     this.filteredCarOptions = [];
     this.modelKeys = [];
   }
-  parseKeysOfModel(model) {
-    const keys = Object.keys(model);
 
-    // if make and year weren't specified they still need to be searched for
-    if (!keys.includes('year')) {
-      keys.push('year');
-    }
-    if (!keys.includes('make')) {
-      keys.push('make');
-    }
-    return keys.sort();
-  }
 
   selChk (val, name) {
     // if the value was unchecked, remove it from the model

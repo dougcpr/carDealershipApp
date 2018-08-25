@@ -13,3 +13,6 @@ th.mat-header-cell {
     text-align: center;
 }
 
+.no-results {
+    margin: 15px 0;
+}

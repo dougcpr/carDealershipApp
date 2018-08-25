@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  searchData = null;
+  searchData = [];
   searchParams = [];
+  query = [];
   tableKeys = [];
   constructor() { }
 
@@ -18,10 +19,15 @@ export class HomeComponent implements OnInit {
     this.searchData = data;
   }
   bindSearchParams (data) {
-    this.searchParams = data;
+    this.query = data;
+    this.searchParams = this.parseKeysOfModel(data);
   }
   bindTableKeys (keys) {
     keys.splice(0, 1);
     this.tableKeys = keys;
+  }
+  parseKeysOfModel(model) {
+    const keys = Object.keys(model);
+    return keys.sort();
   }
 }
