@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RetrieveCarDataService } from '../services/retrieve-car-data.service';
+import { FilterOptionsService } from '../services/FilterOptions.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
   query = [];
   tableKeys = [];
   constructor(
-    private carDataService: RetrieveCarDataService
+    private carDataService: RetrieveCarDataService,
+    private filter: FilterOptionsService
   ) { }
 
   ngOnInit() {
@@ -26,24 +28,9 @@ export class HomeComponent implements OnInit {
     this.carDataService.getCarListings()
       .subscribe((data: any) => {
         this.carListings = data;
-        this.carListings.map((element) => {
-          if (!this.carMakes.includes(element.make)) {
-            this.carMakes.push(element.make);
-          }
-        });
-        this.carListings.map((element) => {
-          if (!this.carYears.includes(element.year)) {
-            this.carYears.push(element.year);
-          }
-        });
-        this.carListings.map((element) => {
-          if (!this.carColors.includes(element.color)) {
-            this.carColors.push(element.color);
-          }
-        });
-        this.carMakes.sort();
-        this.carYears.sort();
-        this.carColors.sort();
+        this.carMakes = this.filter.generateFilterOptions('make', this.carListings);
+        this.carYears = this.filter.generateFilterOptions('year', this.carListings);
+        this.carColors = this.filter.generateFilterOptions('color', this.carListings);
       });
   }
 
