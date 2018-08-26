@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarListingsService } from '../services/carListings.service';
 import { FilterOptionsService } from '../services/filterOptions.service';
+import { carResults } from '../models/carResults.model';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   carColors = [];
   searchParams = [];
   query = [];
-  tableKeys = [];
+  tableKeys = carResults;
   constructor(
     private carDataService: CarListingsService,
     private filter: FilterOptionsService
@@ -40,10 +41,6 @@ export class HomeComponent implements OnInit {
   bindSearchParams (data) {
     this.query = data;
     this.searchParams = this.parseKeysOfModel(data);
-  }
-  bindTableKeys (keys) {
-    keys.splice(0, 1);
-    this.tableKeys = keys;
   }
   parseKeysOfModel(model) {
     const keys = Object.keys(model);

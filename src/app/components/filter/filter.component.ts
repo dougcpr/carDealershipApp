@@ -19,7 +19,6 @@ export class FilterComponent implements OnInit {
   @Input('carColors') carColors = [];
   @Output() carProperties = new EventEmitter();
   @Output() searchParams = new EventEmitter();
-  @Output() keys = new EventEmitter();
   model = new CarOptions(null, null, null, null, null, null, null, null, null);
   constructor(
     private carListing: CarListingsService
@@ -33,7 +32,6 @@ export class FilterComponent implements OnInit {
       .subscribe((data) => {
         // emit the objects to the home component,
         // so you can import them into the table
-        this.keys.emit(Object.keys(this.carListings[0]));
         this.carProperties.emit(data);
         this.searchParams.emit(this.model);
       });
@@ -43,7 +41,6 @@ export class FilterComponent implements OnInit {
     this.flag = true;
     this.carListing.searchForSomeMatchingResults(this.model)
       .subscribe((data) => {
-        this.keys.emit(Object.keys(this.carListings[0]));
         this.carProperties.emit(data);
         this.searchParams.emit(this.model);
       });
