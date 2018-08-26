@@ -2,8 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FilterComponent } from './filter.component';
 import {
   MatButtonModule,
-  MatCardModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatOptionModule, MatRadioModule, MatSelectModule,
-  MatTableModule,
+  MatCardModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatOptionModule, MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -24,7 +23,6 @@ describe('FilterComponent', () => {
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        MatRadioModule,
         MatIconModule,
         MatFormFieldModule,
         MatCardModule,
@@ -33,8 +31,7 @@ describe('FilterComponent', () => {
         HttpClientModule,
         MatSelectModule,
         MatCheckboxModule,
-        MatButtonModule,
-        MatTableModule
+        MatButtonModule
       ],
       providers: [
         RetrieveCarDataService
