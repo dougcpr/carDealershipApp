@@ -1,4 +1,12 @@
 <app-card-layout [keys]="tableKeys" [searchParams]="searchParams" [filteredOptions]="searchData" [title]="'Doug\'s Car Lot'">
-    <app-filter (keys)="bindTableKeys($event)" (carProperties)="onSearch($event)" (searchParams)="bindSearchParams($event)"></app-filter>
+    <app-filter
+            [carListings]="carListings"
+            [carMakes]="carMakes"
+            [carYears]="carYears"
+            [carColors]="carColors"
+            (keys)="bindTableKeys($event)"
+            (carProperties)="onSearch($event)"
+            (searchParams)="bindSearchParams($event)"
+    ></app-filter>
     <app-table [query]="query" [keys]="tableKeys" [searchParams]="searchParams" [filteredOptions]="searchData"></app-table>
 </app-card-layout>

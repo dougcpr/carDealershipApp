@@ -1,4 +1,4 @@
-import { TestBed, async, tick, fakeAsync } from '@angular/core/testing';
+import {TestBed, async, tick, fakeAsync, flush} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -75,12 +75,16 @@ describe('AppComponent', () => {
   }));
   it('navigate to "" redirects you to /home', fakeAsync(() => {
     router.navigate(['']);
+    // if no parameter is passed it will wait until all
+    // micro tasks are completed
     tick();
     expect(location.path()).toBe('/home');
   }));
   it('navigate to "home" directs you to /home', fakeAsync(() => {
     router.navigate(['/home']);
-    tick();
+    // simulates passage of time until macro tasks queue is empty
+    // macro tasks are setTimeouts, setIntervals, and requestFrameAnimation
+    flush();
     expect(location.path()).toBe('/home');
   }));
 });

@@ -18,7 +18,7 @@ export class RetrieveCarDataService {
     private http: HttpClient
   ) { }
 
-  getCarData (): Observable<any> {
+  getCarListings (): Observable<any> {
     return this.http.get(`${this.route}/getCarData`);
   }
   searchForAllMatchingResults(body): Observable<any> {

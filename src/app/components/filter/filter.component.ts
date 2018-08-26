@@ -9,14 +9,14 @@ import { RetrieveCarDataService } from '../../services/retrieve-car-data.service
   providers: [RetrieveCarDataService]
 })
 export class FilterComponent implements OnInit {
-  carData;
   flag;
   filteredCarOptions;
   modelKeys;
-  carMake = [];
-  carYear = [];
-  carColor = [];
   @Input('title') title;
+  @Input('carListings') carListings = [];
+  @Input('carMakes') carMakes = [];
+  @Input('carYears') carYears = [];
+  @Input('carColors') carColors = [];
   @Output() carProperties = new EventEmitter();
   @Output() searchParams = new EventEmitter();
   @Output() keys = new EventEmitter();
@@ -24,32 +24,7 @@ export class FilterComponent implements OnInit {
   constructor(
     private carDataService: RetrieveCarDataService
   ) {}
-  ngOnInit() {
-    // on init grab the card to post process
-    // the make, color, and year options
-    this.carDataService.getCarData()
-      .subscribe((data: any) => {
-        this.carData = data;
-        this.carData.map((element) => {
-          if (!this.carMake.includes(element.make)) {
-            this.carMake.push(element.make);
-          }
-        });
-        this.carData.map((element) => {
-          if (!this.carYear.includes(element.year)) {
-            this.carYear.push(element.year);
-          }
-        });
-        this.carData.map((element) => {
-          if (!this.carColor.includes(element.color)) {
-            this.carColor.push(element.color);
-          }
-        });
-        this.carMake.sort();
-        this.carYear.sort();
-        this.carColor.sort();
-      });
-  }
+  ngOnInit() {}
 
   // matches against ALL of the properties
   searchAll () {
@@ -58,7 +33,7 @@ export class FilterComponent implements OnInit {
       .subscribe((data) => {
         // emit the objects to the home component,
         // so you can import them into the table
-        this.keys.emit(Object.keys(this.carData[0]));
+        this.keys.emit(Object.keys(this.carListings[0]));
         this.carProperties.emit(data);
         this.searchParams.emit(this.model);
       });
@@ -68,7 +43,7 @@ export class FilterComponent implements OnInit {
     this.flag = true;
     this.carDataService.searchForSomeMatchingResults(this.model)
       .subscribe((data) => {
-        this.keys.emit(Object.keys(this.carData[0]));
+        this.keys.emit(Object.keys(this.carListings[0]));
         this.carProperties.emit(data);
         this.searchParams.emit(this.model);
       });

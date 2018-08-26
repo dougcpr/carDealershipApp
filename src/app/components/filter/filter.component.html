@@ -3,7 +3,7 @@
     <div style="flex:1">
       <mat-form-field class="form-select">
         <mat-select name="make" [(ngModel)]="model.make" placeholder="Car Make" #make="ngModel">
-          <mat-option  *ngFor="let make of carMake" [value]="make" ngDefaultControl>
+          <mat-option  *ngFor="let make of carMakes" [value]="make" ngDefaultControl>
             {{make}}
           </mat-option>
         </mat-select>
@@ -12,7 +12,7 @@
     <div style="flex:1">
       <mat-form-field class="form-select">
         <mat-select name="year"  [(ngModel)]="model.year" placeholder="Year" #year="ngModel">
-          <mat-option  *ngFor="let year of carYear" [value]="year" ngDefaultControl>
+          <mat-option  *ngFor="let year of carYears" [value]="year" ngDefaultControl>
             {{year}}
           </mat-option>
         </mat-select>
@@ -21,7 +21,7 @@
     <div style="flex:1">
       <mat-form-field class="form-select">
         <mat-select name="color" [(ngModel)]="model.color" placeholder="Color">
-          <mat-option   *ngFor="let color of carColor" [value]="color" ngDefaultControl>
+          <mat-option   *ngFor="let color of carColors" [value]="color" ngDefaultControl>
             {{color}}
           </mat-option>
         </mat-select>
