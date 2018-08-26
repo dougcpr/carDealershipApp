@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   searchData = [];
   carListings = [];
   carMakes = [];
+  searchFlag;
   carYears = [];
   carColors = [];
   searchParams = [];
@@ -35,12 +36,15 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  onSearch (data) {
-    this.searchData = data;
+  onSearch (searchResults) {
+    this.searchData = searchResults;
   }
   bindSearchParams (data) {
     this.query = data;
     this.searchParams = this.parseKeysOfModel(data);
+  }
+  bindSearchFlag (flagValue) {
+    this.searchFlag = flagValue;
   }
   parseKeysOfModel(model) {
     const keys = Object.keys(model);

@@ -6,6 +6,13 @@
             [carColors]="carColors"
             (carProperties)="onSearch($event)"
             (searchParams)="bindSearchParams($event)"
+            (searchFlag)="bindSearchFlag($event)"
     ></app-filter>
-    <app-table [query]="query" [keys]="tableKeys" [searchParams]="searchParams" [filteredOptions]="searchData"></app-table>
+    <app-table
+            [query]="query"
+            [keys]="tableKeys"
+            [searchFlag]="searchFlag"
+            [searchParams]="searchParams"
+            [filteredOptions]="searchData"
+    ></app-table>
 </app-card-layout>

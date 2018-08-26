@@ -18,12 +18,15 @@ export class FilterComponent implements OnInit {
   @Input('carYears') carYears = [];
   @Input('carColors') carColors = [];
   @Output() carProperties = new EventEmitter();
+  @Output() searchFlag = new EventEmitter();
   @Output() searchParams = new EventEmitter();
   model = new CarOptions(null, null, null, null, null, null, null, null, null);
   constructor(
     private carListing: CarListingsService
   ) {}
-  ngOnInit() {}
+  ngOnInit() {
+    this.searchFlag.emit(false);
+  }
 
   // matches against ALL of the properties
   searchAll () {
@@ -34,6 +37,7 @@ export class FilterComponent implements OnInit {
         // so you can import them into the table
         this.carProperties.emit(data);
         this.searchParams.emit(this.model);
+        this.searchFlag.emit(true);
       });
   }
   // matches against SOME of the properties
@@ -42,7 +46,10 @@ export class FilterComponent implements OnInit {
     this.carListing.searchForSomeMatchingResults(this.model)
       .subscribe((data) => {
         this.carProperties.emit(data);
+        // send back the search parameters to let the user know what they
+        // searched by in the table
         this.searchParams.emit(this.model);
+        this.searchFlag.emit(true);
       });
   }
   // reset the search parameters
@@ -50,6 +57,7 @@ export class FilterComponent implements OnInit {
     this.model = new CarOptions(null, null, null, null, null, null, null, null, null);
     this.filteredCarOptions = [];
     this.modelKeys = [];
+    this.searchFlag.emit(false);
   }
 
 

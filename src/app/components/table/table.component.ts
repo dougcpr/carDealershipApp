@@ -6,14 +6,13 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  @Input('filteredOptions') filteredOptions = [''];
+  @Input('filteredOptions') filteredOptions;
   @Input('searchParams') searchParams;
   @Input('query') query;
+  @Input('searchFlag') searchFlag;
   @Input('keys') keys;
   constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
   alterColor (key, value) {
     if (this.searchParams.includes(key)) {
       if (this.query[key] === value) {
