@@ -12,7 +12,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class RetrieveCarDataService {
+export class CarListingsService {
   route = environment.apiUrl;
   constructor(
     private http: HttpClient

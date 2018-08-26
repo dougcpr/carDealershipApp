@@ -7,7 +7,7 @@ import {
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {RetrieveCarDataService} from '../../services/retrieve-car-data.service';
+import {CarListingsService} from '../../services/carListings.service';
 import {HttpClientModule} from '@angular/common/http';
 
 describe('FilterComponent', () => {
@@ -34,7 +34,7 @@ describe('FilterComponent', () => {
         MatButtonModule
       ],
       providers: [
-        RetrieveCarDataService
+        CarListingsService
       ]
     })
       .compileComponents();

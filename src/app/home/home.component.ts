@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RetrieveCarDataService } from '../services/retrieve-car-data.service';
-import { FilterOptionsService } from '../services/FilterOptions.service';
+import { CarListingsService } from '../services/carListings.service';
+import { FilterOptionsService } from '../services/filterOptions.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   query = [];
   tableKeys = [];
   constructor(
-    private carDataService: RetrieveCarDataService,
+    private carDataService: CarListingsService,
     private filter: FilterOptionsService
   ) { }
 
