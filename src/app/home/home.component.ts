@@ -28,20 +28,31 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getCarListings();
+    this.getFilterOptions();
+  }
+  getCarListings () {
     // on init grab the card to post process
     // the make, color, and year options
     // send car data to the service to return the filter options
     this.carService.getCarListings()
       .subscribe((data) => {
-      this.carListings = data.carData;
-      this.carColors = data.filterOptions.color.sort();
-      this.carMakes = data.filterOptions.make.sort();
-      this.carYears = data.filterOptions.year.sort();
+        this.carListings = data.carData;
+
       }, (error) => {
         this.handleError(error);
-    });
+      });
   }
-
+  getFilterOptions () {
+    this.carService.getFilterOptions()
+      .subscribe((filter) => {
+        this.carColors = filter.color.sort();
+        this.carMakes = filter.make.sort();
+        this.carYears = filter.year.sort();
+      }, (error) => {
+        this.handleError(error);
+      });
+  }
   onSearch (searchResults) {
     this.searchData = searchResults;
   }
