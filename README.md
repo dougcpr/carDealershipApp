@@ -15,6 +15,12 @@ FrontEnd: Angular 6
 
 To start the client side application, navigate to the root project directory
 
+After cloning the package:
+
+`git checkout 3149d05067337d5d5750bf6d2e00c05895d90d35`
+
+This is version that is submitted for the project. I have been working on this throughout the weekend to learn how about n computations.
+
 Install the packages
 
 `npm install`
