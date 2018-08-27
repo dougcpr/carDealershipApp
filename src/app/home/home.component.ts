@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 // Services
 import { CarListingsService } from '../services/carListings/carListings.service';
-import { FilterOptionsService } from '../services/filterOptions/filterOptions.service';
+
 
 // Car Table Header Model
 import { carResults } from '../models/carResults.model';
@@ -10,7 +10,8 @@ import { carResults } from '../models/carResults.model';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [CarListingsService]
 })
 export class HomeComponent implements OnInit {
   searchData = [];
@@ -23,8 +24,7 @@ export class HomeComponent implements OnInit {
   query = [];
   tableKeys = carResults;
   constructor(
-    private carService: CarListingsService,
-    private filter: FilterOptionsService
+    private carService: CarListingsService
   ) { }
 
   ngOnInit() {

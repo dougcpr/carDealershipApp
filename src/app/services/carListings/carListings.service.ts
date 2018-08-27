@@ -21,7 +21,7 @@ export class CarListingsService {
 
   getCarListings (): Observable<any> {
     return this.http.get(`${this.route}/getCarData`)
-      .pipe(map((carData) => {
+      .pipe(map((carData: Array<any>) => {
           const filterOptions = {};
           // reverse index data based on key values
           if (carData) {
