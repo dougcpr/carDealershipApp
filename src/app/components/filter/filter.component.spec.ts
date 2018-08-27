@@ -7,7 +7,7 @@ import {
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {CarListingsService} from '../../services/carListings.service';
+import {CarListingsService} from '../../services/carListings/carListings.service';
 import {HttpClientModule} from '@angular/common/http';
 
 describe('FilterComponent', () => {

@@ -1,6 +1,7 @@
 export const carResults  = [
   'make',
   'year',
+  'price',
   'color',
   'hasSunroof',
   'isFourWheelDrive',

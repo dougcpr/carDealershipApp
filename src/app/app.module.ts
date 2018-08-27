@@ -16,8 +16,8 @@ import {
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CamelToHumanPipe} from './pipes/camelToHuman.pipe';
 import { CardLayoutComponent } from './layouts/card-layout/card-layout.component';
-import {CarListingsService} from "./services/carListings.service";
-import {FilterOptionsService} from "./services/filterOptions.service";
+import {CarListingsService} from "./services/carListings/carListings.service";
+import {FilterOptionsService} from "./services/filterOptions/filterOptions.service";
 
 @NgModule({
   declarations: [

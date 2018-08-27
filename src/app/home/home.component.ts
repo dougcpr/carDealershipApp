@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CarListingsService } from '../services/carListings.service';
-import { FilterOptionsService } from '../services/filterOptions.service';
+
+// Services
+import { CarListingsService } from '../services/carListings/carListings.service';
+import { FilterOptionsService } from '../services/filterOptions/filterOptions.service';
+
+// Car Table Header Model
 import { carResults } from '../models/carResults.model';
 
 @Component({
@@ -19,7 +23,7 @@ export class HomeComponent implements OnInit {
   query = [];
   tableKeys = carResults;
   constructor(
-    private carDataService: CarListingsService,
+    private carService: CarListingsService,
     private filter: FilterOptionsService
   ) { }
 
@@ -27,13 +31,15 @@ export class HomeComponent implements OnInit {
     // on init grab the card to post process
     // the make, color, and year options
     // send car data to the service to return the filter options
-    this.carDataService.getCarListings()
-      .subscribe((data: any) => {
-        this.carListings = data;
-        this.carMakes = this.filter.generateFilterOptions('make', this.carListings);
-        this.carYears = this.filter.generateFilterOptions('year', this.carListings);
-        this.carColors = this.filter.generateFilterOptions('color', this.carListings);
-      });
+    this.carService.getCarListings()
+      .subscribe((data) => {
+      this.carListings = data.carData;
+      this.carColors = data.filterOptions.color.sort();
+      this.carMakes = data.filterOptions.make.sort();
+      this.carYears = data.filterOptions.year.sort();
+      }, (error) => {
+        this.handleError(error);
+    });
   }
 
   onSearch (searchResults) {
@@ -49,5 +55,8 @@ export class HomeComponent implements OnInit {
   parseKeysOfModel(model) {
     const keys = Object.keys(model);
     return keys.sort();
+  }
+  handleError (error) {
+    console.log(error);
   }
 }
