@@ -9,8 +9,11 @@
         <div *ngIf="!option[key]">
             <mat-icon>clear</mat-icon>
         </div>
-        <div *ngIf="option[key] !== true && option[key] !== false">
+        <div *ngIf="option[key] !== true && option[key] !== false && key !== 'price'">
             {{option[key]}}
+        </div>
+        <div *ngIf="option[key] !== true && option[key] !== false && key === 'price'">
+            ${{option[key]}}
         </div>
     </td>
   </ng-container>
