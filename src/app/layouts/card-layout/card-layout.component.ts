@@ -7,9 +7,6 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CardLayoutComponent implements OnInit {
   @Input('title') title;
-  @Input('filteredOptions') filteredOptions;
-  @Input('searchParams') searchParams;
-  @Input('keys') keys;
   constructor() { }
 
   ngOnInit() {
