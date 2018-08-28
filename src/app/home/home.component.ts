@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     this.getCarListings();
     this.getFilterOptions();
   }
-  getCarListings () {
+  getCarListings (): void {
     // on init grab the card to post process
     // the make, color, and year options
     // send car data to the service to return the filter options
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
         this.handleError(error);
       });
   }
-  getFilterOptions () {
+  getFilterOptions (): void {
     this.carService.getFilterOptions()
       .subscribe((filter) => {
         this.carColors = filter.color.sort();

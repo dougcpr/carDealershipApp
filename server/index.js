@@ -20,7 +20,7 @@ MongoClient.connect(url, function(err, database) {
 
 // Headers that allow me to post, get, and patch data from the client
 app.use(function(req, res, next){
-  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Request-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, HEAD, OPTIONS, PUT, DELETE");
   res.header("Access-Control-Allow-Credentials", true);
