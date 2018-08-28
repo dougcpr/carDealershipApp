@@ -64,12 +64,6 @@ describe('HomeComponent', () => {
     it('should create', () => {
       expect(component).toBeTruthy();
     });
-
-  // see if car service was called
-  it(`should get the car listings`, fakeAsync(() => {
-    homeComp.ngOnInit();
-    expect(homeComp.getCarListings).toHaveBeenCalled();
-  }));
   // see if filter service was called
   it(`should get the filter options`, fakeAsync(() => {
     homeComp.ngOnInit();

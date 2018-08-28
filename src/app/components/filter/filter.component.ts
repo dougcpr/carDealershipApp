@@ -13,7 +13,6 @@ export class FilterComponent implements OnInit {
   filteredCarOptions;
   modelKeys;
   @Input('title') title;
-  @Input('carListings') carListings = [];
   @Input('carMakes') carMakes = [];
   @Input('carYears') carYears = [];
   @Input('carColors') carColors = [];
