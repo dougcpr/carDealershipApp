@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
 
@@ -16,22 +16,14 @@ import { CardLayoutComponent} from '../layouts/card-layout/card-layout.component
 import { TableComponent } from '../components/table/table.component';
 import { FilterComponent } from '../components/filter/filter.component';
 import { HttpClientModule } from '@angular/common/http';
-import { of } from 'rxjs';
-// this confuses me? why are they injecting potentially a large data set to test against
-import { CARS } from '../mock-cars';
 import { CarListingsService } from '../services/carListings/carListings.service';
 
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  let carListingsService;
-  let getCarsSpy;
+  const comp = new HomeComponent(CarListingsService);
     beforeEach(async(() => {
-      // create spy for car service to get cars
-      carListingsService = jasmine.createSpyObj('CarListingsService', ['getCarListings']);
-      // setup spy to invoke getCarListings and return CARS
-      getCarsSpy = carListingsService.getCarListings.and.returnValue( of(CARS) );
       TestBed.configureTestingModule({
         declarations: [
           HomeComponent,
@@ -55,10 +47,6 @@ describe('HomeComponent', () => {
           MatButtonModule,
           MatTableModule,
           HttpClientModule
-        ],
-        // provide hero service and jasmine spy
-        providers: [
-          { provide: CarListingsService, useValue: carListingsService }
         ]
       })
         .compileComponents();
@@ -68,6 +56,8 @@ describe('HomeComponent', () => {
       fixture = TestBed.createComponent(HomeComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
+      spyOn(comp, 'getCarListings');
+      spyOn(comp, 'getFilterOptions');
     });
 
     it('should create', () => {
@@ -75,7 +65,13 @@ describe('HomeComponent', () => {
     });
 
   // see if car service was called
-  it('should call carListingsService', async(() => {
-    expect(getCarsSpy.calls.any()).toBe(true);
+  it(`should get the car listings`, fakeAsync(() => {
+    comp.ngOnInit();
+    expect(comp.getCarListings).toHaveBeenCalled();
+  }));
+  // see if filter service was called
+  it(`should get the filter options`, fakeAsync(() => {
+    comp.ngOnInit();
+    expect(comp.getFilterOptions).toHaveBeenCalled();
   }));
 });
