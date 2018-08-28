@@ -18,13 +18,6 @@ export class CarListingsService {
   constructor(
     private http: HttpClient
   ) { }
-
-  getCarListings (): Observable<any> {
-    return this.http.get(`${this.route}/getCarData`)
-      .pipe(map((carData: Array<any>) => {
-          return carData;
-        }));
-  }
   getFilterOptions (): Observable<any> {
     return this.http.get(`${this.route}/getCarData`)
       .pipe(map((carData: Array<any>) => {
