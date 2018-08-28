@@ -22,7 +22,8 @@ import { CarListingsService } from '../services/carListings/carListings.service'
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  const comp = new HomeComponent(CarListingsService);
+  // TODO: Stub out Service
+  const homeComp = new HomeComponent(CarListingsService);
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         declarations: [
@@ -56,8 +57,8 @@ describe('HomeComponent', () => {
       fixture = TestBed.createComponent(HomeComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
-      spyOn(comp, 'getCarListings');
-      spyOn(comp, 'getFilterOptions');
+      spyOn(homeComp, 'getCarListings');
+      spyOn(homeComp, 'getFilterOptions');
     });
 
     it('should create', () => {
@@ -66,12 +67,12 @@ describe('HomeComponent', () => {
 
   // see if car service was called
   it(`should get the car listings`, fakeAsync(() => {
-    comp.ngOnInit();
-    expect(comp.getCarListings).toHaveBeenCalled();
+    homeComp.ngOnInit();
+    expect(homeComp.getCarListings).toHaveBeenCalled();
   }));
   // see if filter service was called
   it(`should get the filter options`, fakeAsync(() => {
-    comp.ngOnInit();
-    expect(comp.getFilterOptions).toHaveBeenCalled();
+    homeComp.ngOnInit();
+    expect(homeComp.getFilterOptions).toHaveBeenCalled();
   }));
 });
