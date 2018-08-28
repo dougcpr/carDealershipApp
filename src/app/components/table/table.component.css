@@ -12,6 +12,16 @@ th.mat-header-cell {
     text-align: center;
 }
 
+th {
+    background-color: white;
+    cursor: default;
+}
+
+tr:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
 .no-results {
     margin: 15px 0;
 }
