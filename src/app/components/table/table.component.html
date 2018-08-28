@@ -1,7 +1,7 @@
-<table *ngIf="filteredOptions.length > 0 && searchFlag" mat-table [dataSource]="filteredOptions" class="mat-elevation-z8">
+<table matSort *ngIf="filteredOptions.length > 0 && searchFlag" mat-table [dataSource]="filteredOptions" class="mat-elevation-z8">
 
   <ng-container  *ngFor="let key of keys" matColumnDef="{{key}}">
-    <th mat-header-cell *matHeaderCellDef> {{key | camelToHuman}} </th>
+    <th mat-header-cell mat-sort-header *matHeaderCellDef> {{key | camelToHuman}} </th>
     <td mat-cell [ngStyle]="{'background-color': alterColor(key, option[key])}" *matCellDef="let option">
         <div *ngIf="option[key] === true ">
             <mat-icon>check</mat-icon>

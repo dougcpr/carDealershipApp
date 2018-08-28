@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {MatSort} from '@angular/material';
 
 @Component({
   selector: 'app-table',
@@ -11,8 +12,12 @@ export class TableComponent implements OnInit {
   @Input('query') query;
   @Input('searchFlag') searchFlag;
   @Input('keys') keys;
+  @ViewChild(MatSort) sort: MatSort;
   constructor() { }
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.filteredOptions.sort = this.sort;
+  }
   alterColor (key, value) {
     if (this.searchParams.includes(key)) {
       if (this.query[key] === value) {
