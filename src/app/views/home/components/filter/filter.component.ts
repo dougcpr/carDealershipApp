@@ -9,9 +9,7 @@ import { CarListingsService } from '../../../../services/carListings/carListings
   providers: [CarListingsService]
 })
 export class FilterComponent implements OnInit {
-  flag;
-  filteredCarOptions;
-  modelKeys;
+  // I/O
   @Input('title') title;
   @Input('carMakes') carMakes = [];
   @Input('carYears') carYears = [];
@@ -20,6 +18,10 @@ export class FilterComponent implements OnInit {
   @Output() carProperties = new EventEmitter();
   @Output() searchFlag = new EventEmitter();
   @Output() searchParams = new EventEmitter();
+  // Variables
+  flag;
+  filteredCarOptions;
+  modelKeys;
   model = new CarOptions('', 0, '', false, false, false, false, false, false);
   constructor(
     private carService: CarListingsService

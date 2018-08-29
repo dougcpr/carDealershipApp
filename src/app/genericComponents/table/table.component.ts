@@ -6,6 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  // I/O
   @Input('filteredOptions') filteredOptions = [''];
   @Input('searchParams') searchParams;
   @Input('query') query;
