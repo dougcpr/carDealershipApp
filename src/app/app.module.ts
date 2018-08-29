@@ -10,8 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCardModule,
-  MatCheckboxModule, MatFormFieldModule, MatIconModule, MatOptionModule, MatRadioModule,
-  MatSelectModule, MatTableModule, MatToolbarModule
+  MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatOptionModule, MatRadioModule,
+  MatSelectModule, MatSliderModule, MatTableModule, MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CamelToHumanPipe} from './pipes/camelToHuman.pipe';
@@ -35,6 +35,7 @@ import { CardLayoutComponent } from './layouts/card-layout/card-layout.component
     BrowserAnimationsModule,
     MatRadioModule,
     MatIconModule,
+    MatInputModule,
     MatFormFieldModule,
     MatCardModule,
     MatOptionModule,
@@ -42,7 +43,8 @@ import { CardLayoutComponent } from './layouts/card-layout/card-layout.component
     MatSelectModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

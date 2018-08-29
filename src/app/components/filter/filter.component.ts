@@ -16,6 +16,7 @@ export class FilterComponent implements OnInit {
   @Input('carMakes') carMakes = [];
   @Input('carYears') carYears = [];
   @Input('carColors') carColors = [];
+  @Input('carPrices') carPrices;
   @Output() carProperties = new EventEmitter();
   @Output() searchFlag = new EventEmitter();
   @Output() searchParams = new EventEmitter();
@@ -67,6 +68,17 @@ export class FilterComponent implements OnInit {
     if (!val) {
       delete this.model[name];
     }
+  }
+  formatLabel(value: number | null) {
+    if (!value) {
+      return 0;
+    }
+
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
+
+    return value;
   }
 
 }

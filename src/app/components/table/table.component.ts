@@ -18,10 +18,13 @@ export class TableComponent implements OnInit {
     if (this.searchParams.includes(key)) {
       if (this.query[key] === value) {
         return '#90EE90';
-      } else {
-        return 'lightblue';
       }
+      if (key === 'price') {
+        if (this.query.price > value) {
+          return '#90EE90';
+        }
       }
+    }
   }
 
 }

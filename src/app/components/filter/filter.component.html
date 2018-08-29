@@ -1,6 +1,6 @@
 <form #carForm="ngForm">
   <div class="flex-items-row">
-    <div style="flex:1">
+    <div >
       <mat-form-field class="form-select">
         <mat-select name="make" [(ngModel)]="model.make" placeholder="Car Make" #make="ngModel">
           <mat-option  *ngFor="let make of carMakes" [value]="make" ngDefaultControl>
@@ -9,7 +9,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div style="flex:1">
+    <div>
       <mat-form-field class="form-select">
         <mat-select name="year"  [(ngModel)]="model.year" placeholder="Year" #year="ngModel">
           <mat-option  *ngFor="let year of carYears" [value]="year" ngDefaultControl>
@@ -18,7 +18,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div style="flex:1">
+    <div>
       <mat-form-field class="form-select">
         <mat-select name="color" [(ngModel)]="model.color" placeholder="Color">
           <mat-option   *ngFor="let color of carColors" [value]="color" ngDefaultControl>
@@ -27,6 +27,15 @@
         </mat-select>
       </mat-form-field>
     </div>
+      <div>
+          <mat-form-field class="form-select">
+              <mat-select name="price" [(ngModel)]="model.price" placeholder="Max Price">
+                  <mat-option   *ngFor="let price of carPrices" [value]="price" ngDefaultControl>
+                      {{price}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
   </div>
 
   <div class="flex-items-column">
@@ -41,6 +50,7 @@
       <mat-checkbox [value]="model.hasNavigation" (change)="selChk(model.hasNavigation, 'hasNavigation')" [(ngModel)]="model.hasNavigation" name="hasNavigation" class="form-checkbox">Built in Navigation</mat-checkbox>
 
       <mat-checkbox [value]="model.hasHeatedSeats" (change)="selChk(model.hasHeatedSeats, 'hasHeatedSeats')" [(ngModel)]="model.hasHeatedSeats"  name="hasHeatedSeats" class="form-checkbox">Heated Seats</mat-checkbox>
+
   </div>
 
   <div class="button-group">

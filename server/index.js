@@ -68,11 +68,14 @@ function createQuery(body) {
     // I convert the value to a Number type
     if (objectKeys[i] === 'year') {
       obj[objectKeys[i]] = Number(body[objectKeys[i]])
+    } else if (objectKeys[i] === 'price') {
+        obj[objectKeys[i]] = {$lte: body[objectKeys[i]]}
     } else {
       obj[objectKeys[i]] = body[objectKeys[i]];
     }
     query.push(obj)
   }
+  console.log(query);
 }
 
 app.listen('3000', function(){

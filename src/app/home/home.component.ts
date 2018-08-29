@@ -15,7 +15,9 @@ import { carResults } from '../models/carResults.model';
 })
 export class HomeComponent implements OnInit {
   searchData = [];
-  carListings = [];
+  minPrice;
+  maxPrice;
+  carPrices = [];
   carMakes = [];
   searchFlag;
   carYears = [];
@@ -39,6 +41,7 @@ export class HomeComponent implements OnInit {
         this.carColors = filter.color.sort();
         this.carMakes = filter.make.sort();
         this.carYears = filter.year.sort();
+        this.carPrices = this.roundCarPrices(filter.price);
       }, (error) => {
         this.handleError(error);
       });
@@ -59,5 +62,13 @@ export class HomeComponent implements OnInit {
   }
   handleError (error) {
     console.log(error);
+  }
+  roundCarPrices (prices) {
+    prices.map((price, index) => {
+      prices[index] = Math.round(price / 1000) * 1000;
+    });
+    prices.sort();
+    prices = Array.from(new Set(prices));
+    return prices;
   }
 }
