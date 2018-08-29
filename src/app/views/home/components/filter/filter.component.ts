@@ -63,24 +63,10 @@ export class FilterComponent implements OnInit {
   }
 
 
-  selChk (val, name) {
-    // if the checkbox was unchecked, remove it from the model
-    // the default method keeps it in the model
-    // and ruins of only looking for what was asked for
+  verifyCheckbox (val, name) {
     if (!val) {
       delete this.model[name];
     }
-  }
-  formatLabel(value: number | null) {
-    if (!value) {
-      return 0;
-    }
-
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'k';
-    }
-
-    return value;
   }
 
 }

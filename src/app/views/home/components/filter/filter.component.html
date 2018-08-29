@@ -39,17 +39,23 @@
   </div>
 
   <div class="flex-items-column">
-      <mat-checkbox [value]="model.hasSunroof" (change)="selChk(model.hasSunroof, 'hasSunroof')" [(ngModel)]="model.hasSunroof" name="hasSunroof" class="form-checkbox">Sunroof</mat-checkbox>
+      <mat-checkbox
+              [value]="model.hasSunroof"
+              (change)="verifyCheckbox(model.hasSunroof, 'hasSunroof')"
+              [(ngModel)]="model.hasSunroof"
+              name="hasSunroof"
+              class="form-checkbox">Sunroof
+      </mat-checkbox>
 
-      <mat-checkbox [value]="model.isFourWheelDrive" (change)="selChk(model.isFourWheelDrive, 'isFourWheelDrive')" [(ngModel)]="model.isFourWheelDrive" name="isFourWheelDrive" class="form-checkbox">Four Wheel Drive</mat-checkbox>
+      <mat-checkbox [value]="model.isFourWheelDrive" (change)="verifyCheckbox(model.isFourWheelDrive, 'isFourWheelDrive')" [(ngModel)]="model.isFourWheelDrive" name="isFourWheelDrive" class="form-checkbox">Four Wheel Drive</mat-checkbox>
 
-      <mat-checkbox [value]="model.hasLowMiles" (change)="selChk(model.hasLowMiles,'hasLowMiles')" [(ngModel)]="model.hasLowMiles" name="hasLowMiles" class="form-checkbox">Low Miles</mat-checkbox>
+      <mat-checkbox [value]="model.hasLowMiles" (change)="verifyCheckbox(model.hasLowMiles,'hasLowMiles')" [(ngModel)]="model.hasLowMiles" name="hasLowMiles" class="form-checkbox">Low Miles</mat-checkbox>
 
-      <mat-checkbox [value]="model.hasPowerWindows" (change)="selChk(model.hasPowerWindows, 'hasPowerWindows')" [(ngModel)]="model.hasPowerWindows" name="hasPowerWindows" class="form-checkbox">Power Windows</mat-checkbox>
+      <mat-checkbox [value]="model.hasPowerWindows" (change)="verifyCheckbox(model.hasPowerWindows, 'hasPowerWindows')" [(ngModel)]="model.hasPowerWindows" name="hasPowerWindows" class="form-checkbox">Power Windows</mat-checkbox>
 
-      <mat-checkbox [value]="model.hasNavigation" (change)="selChk(model.hasNavigation, 'hasNavigation')" [(ngModel)]="model.hasNavigation" name="hasNavigation" class="form-checkbox">Built in Navigation</mat-checkbox>
+      <mat-checkbox [value]="model.hasNavigation" (change)="verifyCheckbox(model.hasNavigation, 'hasNavigation')" [(ngModel)]="model.hasNavigation" name="hasNavigation" class="form-checkbox">Built in Navigation</mat-checkbox>
 
-      <mat-checkbox [value]="model.hasHeatedSeats" (change)="selChk(model.hasHeatedSeats, 'hasHeatedSeats')" [(ngModel)]="model.hasHeatedSeats"  name="hasHeatedSeats" class="form-checkbox">Heated Seats</mat-checkbox>
+      <mat-checkbox [value]="model.hasHeatedSeats" (change)="verifyCheckbox(model.hasHeatedSeats, 'hasHeatedSeats')" [(ngModel)]="model.hasHeatedSeats"  name="hasHeatedSeats" class="form-checkbox">Heated Seats</mat-checkbox>
 
   </div>
 
