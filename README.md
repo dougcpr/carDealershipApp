@@ -10,6 +10,9 @@ Backend: JavaScript
 
 FrontEnd: Angular 6
 
+![Alt Text](https://i.imgur.com/ojlaWh4.gifv)
+
+
 
 ### Client Setup
 
