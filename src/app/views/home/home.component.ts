@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 // Services
 import { CarListingsService } from '../../services/carListings/carListings.service';
 
-
 // Car Table Header Model
 import { carResults } from '../../models/carResults.model';
 
@@ -36,9 +35,9 @@ export class HomeComponent implements OnInit {
     // send car data to the service to return the filter options
     this.carService.getFilterOptions()
       .subscribe((filter) => {
-        this.carColors = filter.color.sort();
-        this.carMakes = filter.make.sort();
-        this.carYears = filter.year.sort();
+        this.carColors = filter.color;
+        this.carMakes = filter.make;
+        this.carYears = filter.year;
         this.carPrices = this.roundCarPrices(filter.price);
       }, (error) => {
         this.handleError(error);
@@ -65,7 +64,6 @@ export class HomeComponent implements OnInit {
     prices.map((price, index) => {
       prices[index] = Math.round(price / 1000) * 1000;
     });
-    prices.sort();
     prices = Array.from(new Set(prices));
     return prices;
   }

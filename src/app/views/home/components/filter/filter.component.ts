@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CarOptions } from '../../../../models/carOptionsModel';
 import { CarListingsService } from '../../../../services/carListings/carListings.service';
 

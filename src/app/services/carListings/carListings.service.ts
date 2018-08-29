@@ -38,6 +38,7 @@ export class CarListingsService {
                 // if it isn't a unique key, make it a unique key
                 filterOptions[keyName] = [element[keyName]];
               }
+              filterOptions[keyName].sort();
             });
           });
         }
