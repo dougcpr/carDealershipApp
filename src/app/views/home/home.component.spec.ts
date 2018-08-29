@@ -22,7 +22,6 @@ import { CarListingsService } from '../../services/carListings/carListings.servi
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  // TODO: Stub out Service
   const homeComp = new HomeComponent(CarListingsService);
     beforeEach(async(() => {
       TestBed.configureTestingModule({

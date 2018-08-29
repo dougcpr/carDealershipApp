@@ -18,21 +18,6 @@ describe('CarListingsService', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('expects service to fetch data with GET',
-    inject([HttpTestingController, CarListingsService],
-      (httpMock: HttpTestingController, service: CarListingsService) => {
-        // We call the service
-        service.getCarListings().subscribe(data => {
-          expect(data).toBe(data);
-        });
-        // We set the expectations for the HttpClient mock
-        const req = httpMock.expectOne(`${route}/getCarData`);
-        expect(req.request.method).toEqual('GET');
-        // Then we set the fake data to be returned by the mock
-        req.flush({data: CARS});
-      })
-  );
-
   it('expects service to cars that have sunroofs with POST',
     inject([HttpTestingController, CarListingsService],
       (httpMock: HttpTestingController, service: CarListingsService) => {
