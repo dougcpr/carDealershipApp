@@ -20,7 +20,7 @@ export class FilterComponent implements OnInit {
   @Output() carProperties = new EventEmitter();
   @Output() searchFlag = new EventEmitter();
   @Output() searchParams = new EventEmitter();
-  model = new CarOptions();
+  model = new CarOptions('', 0, '', false, false, false, false, false, false);
   constructor(
     private carService: CarListingsService
   ) {}
@@ -54,7 +54,7 @@ export class FilterComponent implements OnInit {
   }
   // reset the home parameters
   reset () {
-    this.model = new CarOptions();
+    this.model = new CarOptions('', 0, '', false, false, false, false, false, false);
     this.filteredCarOptions = [];
     this.modelKeys = [];
     this.searchFlag.emit(false);
