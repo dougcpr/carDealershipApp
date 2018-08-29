@@ -1,4 +1,4 @@
-# Car Dealership App (8.24.18)
+# Car Dealership App
 
 Domain: Car Dealership
 
