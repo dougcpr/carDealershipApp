@@ -11,12 +11,12 @@ import {
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CamelToHumanPipe } from '../pipes/camelToHuman.pipe';
-import { CardLayoutComponent} from '../layouts/card-layout/card-layout.component';
-import { TableComponent } from '../components/table/table.component';
-import { FilterComponent } from '../components/filter/filter.component';
+import { CamelToHumanPipe } from '../../pipes/camelToHuman.pipe';
+import { CardLayoutComponent} from '../../layouts/card-layout/card-layout.component';
+import { TableComponent } from '../../genericComponents/table/table.component';
+import { FilterComponent } from './components/filter/filter.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CarListingsService } from '../services/carListings/carListings.service';
+import { CarListingsService } from '../../services/carListings/carListings.service';
 
 
 describe('HomeComponent', () => {

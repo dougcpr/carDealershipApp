@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 // Services
-import { CarListingsService } from '../services/carListings/carListings.service';
+import { CarListingsService } from '../../services/carListings/carListings.service';
 
 
 // Car Table Header Model
-import { carResults } from '../models/carResults.model';
+import { carResults } from '../../models/carResults.model';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +15,6 @@ import { carResults } from '../models/carResults.model';
 })
 export class HomeComponent implements OnInit {
   searchData = [];
-  minPrice;
-  maxPrice;
   carPrices = [];
   carMakes = [];
   searchFlag;

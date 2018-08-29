@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CardLayoutRoutingModule } from './card-layout-routing.module';
 import { CardLayoutComponent } from './card-layout.component';
-import { FilterComponent } from '../../components/filter/filter.component';
-import { TableComponent } from '../../components/table/table.component';
+import { FilterComponent } from '../../views/home/components/filter/filter.component';
+import { TableComponent } from '../../genericComponents/table/table.component';
 
 // Angular Material
 import {
@@ -15,7 +15,7 @@ import {
 
 // Pipes
 import {CamelToHumanPipe} from '../../pipes/camelToHuman.pipe';
-import {HomeComponent} from '../../home/home.component';
+import {HomeComponent} from '../../views/home/home.component';
 
 @NgModule({
   imports: [

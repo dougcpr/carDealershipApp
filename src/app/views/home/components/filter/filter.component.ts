@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { CarOptions } from '../../models/carOptionsModel';
-import { CarListingsService } from '../../services/carListings/carListings.service';
+import { CarOptions } from '../../../../models/carOptionsModel';
+import { CarListingsService } from '../../../../services/carListings/carListings.service';
 
 @Component({
   selector: 'app-filter',
@@ -20,9 +20,9 @@ export class FilterComponent implements OnInit {
   @Output() carProperties = new EventEmitter();
   @Output() searchFlag = new EventEmitter();
   @Output() searchParams = new EventEmitter();
-  model = new CarOptions(null, null, null, null, null, null, null, null, null);
+  model = new CarOptions();
   constructor(
-    private carListing: CarListingsService
+    private carService: CarListingsService
   ) {}
   ngOnInit() {
     this.searchFlag.emit(false);
@@ -31,7 +31,7 @@ export class FilterComponent implements OnInit {
   // matches against ALL of the properties
   searchAll () {
     this.flag = true;
-    this.carListing.searchForAllMatchingResults(this.model)
+    this.carService.searchForAllMatchingResults(this.model)
       .subscribe((data) => {
         // emit the objects to the home component,
         // so you can import them into the table
@@ -43,18 +43,18 @@ export class FilterComponent implements OnInit {
   // matches against SOME of the properties
   searchSome () {
     this.flag = true;
-    this.carListing.searchForSomeMatchingResults(this.model)
+    this.carService.searchForSomeMatchingResults(this.model)
       .subscribe((data) => {
         this.carProperties.emit(data);
-        // send back the search parameters to let the user know what they
+        // send back the home parameters to let the user know what they
         // searched by in the table
         this.searchParams.emit(this.model);
         this.searchFlag.emit(true);
       });
   }
-  // reset the search parameters
+  // reset the home parameters
   reset () {
-    this.model = new CarOptions(null, null, null, null, null, null, null, null, null);
+    this.model = new CarOptions();
     this.filteredCarOptions = [];
     this.modelKeys = [];
     this.searchFlag.emit(false);

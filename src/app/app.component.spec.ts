@@ -1,7 +1,7 @@
 import {TestBed, async, tick, fakeAsync, flush} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './views/home/home.component';
 
 import {Location} from '@angular/common';
 
@@ -21,8 +21,8 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FilterComponent} from './components/filter/filter.component';
-import {TableComponent} from './components/table/table.component';
+import {FilterComponent} from './views/home/components/filter/filter.component';
+import {TableComponent} from './genericComponents/table/table.component';
 import {CamelToHumanPipe} from './pipes/camelToHuman.pipe';
 
 describe('AppComponent', () => {

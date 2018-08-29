@@ -38,7 +38,7 @@ app.get("/getCarData", function(req, res) {
   });
 });
 
-// route for using all the search parameters to filter documents
+// route for using all the home parameters to filter documents
 app.post("/searchAll", function (req, res) {
   createQuery(req.body);
   db.collection("carFilteringOptions").find({
@@ -48,7 +48,7 @@ app.post("/searchAll", function (req, res) {
   });
 });
 
-// uses OR operator to search documents that may have one or more of the properties
+// uses OR operator to home documents that may have one or more of the properties
 app.post("/searchSome", function (req, res) {
   createQuery(req.body);
   db.collection("carFilteringOptions").find({
