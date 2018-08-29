@@ -10,7 +10,7 @@ Backend: JavaScript
 
 FrontEnd: Angular 6
 
-![Alt Text](https://imgur.com/a/uWNHUAa)
+![Alt Text](car_app.gif)
 
 
 
