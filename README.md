@@ -17,32 +17,39 @@ FrontEnd: Angular 6
 
 To start the client side application, navigate to the root project directory
 
-Install the packages
+1. Install the packages
 
 `npm install`
 
-Serve the developer instance, by default it goes to localhost:4200
+2. Serve the developer instance, by default it goes to localhost:4200
 
 `ng serve`
 
 ----
 ### Server Setup
 
-I created a mongodump of the data. In order to import the data into your personal mongodb
+Setup on Mac:
+1. You will need homebrew to install mongodb and run it.
+Instructions can be found here: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+2. I have created a personal database called Personal-DB. You can use whatever name as long as is consistent with where you dump the data into in step 3.
+I use a GUI interface called robo3T to assist in working with the collection in my databases. You can download the Robot 3T (non-studio) version here: https://robomongo.org/.
+
+3. I created a mongodump of the data. In order to import the data into your personal mongodb
 
 `mongorestore --db database_name path_to_bson_file`
 
 The .bson file is found inside `./server/dump/Personal-DB`
 Your database name is whatever you named your database.
 
-To start the server, navigate to the server directory with
+4. To start the server, navigate to the server directory with
 
 `cd server`
 
-Install the packages
+5. Install the packages
 
 `npm install`
 
-Start the server
+6. Start the server
 
 `npm start`
