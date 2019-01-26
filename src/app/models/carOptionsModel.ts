@@ -11,3 +11,15 @@ export class CarOptions {
     hasHeatedSeats: Boolean,
   ) {}
 }
+
+export interface CarDetails {
+  make: String;
+  year: Number;
+  color: String;
+  hasSunroof: Boolean;
+  isFourWheelDrive: Boolean;
+  hasLowMiles: Boolean;
+  hasPowerWindows: Boolean;
+  hasNavigation: Boolean;
+  hasHeatedSeats: Boolean;
+}

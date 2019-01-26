@@ -22,7 +22,16 @@ export class FilterComponent implements OnInit {
   flag;
   filteredCarOptions;
   modelKeys;
-  model = new CarOptions('', 0, '', false, false, false, false, false, false);
+  model = new CarOptions(
+    '',
+    0,
+    '',
+    false,
+    false,
+    false,
+    false,
+    false,
+    false);
   constructor(
     private carService: CarListingsService
   ) {}
@@ -56,7 +65,16 @@ export class FilterComponent implements OnInit {
   }
   // reset the home parameters
   reset () {
-    this.model = new CarOptions('', 0, '', false, false, false, false, false, false);
+    this.model = new CarOptions(
+      '',
+      0,
+      '',
+      false,
+      false,
+      false,
+      false,
+      false,
+      false);
     this.filteredCarOptions = [];
     this.modelKeys = [];
     this.searchFlag.emit(false);

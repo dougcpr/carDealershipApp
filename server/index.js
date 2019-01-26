@@ -44,6 +44,7 @@ app.post("/searchAll", function (req, res) {
   db.collection("carFilteringOptions").find({
     $and: query
   }).toArray(function(err, result) {
+      console.log(result);
     res.send(result);
   });
 });
@@ -54,6 +55,7 @@ app.post("/searchSome", function (req, res) {
   db.collection("carFilteringOptions").find({
     $or: query
   }).toArray(function(err, result) {
+      console.log(result);
     res.send(result);
   });
 });
@@ -75,9 +77,8 @@ function createQuery(body) {
     }
     query.push(obj)
   }
-  console.log(query);
 }
 
-app.listen('3000', function(){
-  console.log('running on 3000...');
+app.listen('3001', function(){
+  console.log('running on 3001...');
 });

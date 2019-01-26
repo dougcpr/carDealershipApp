@@ -16,13 +16,11 @@ import { CardLayoutComponent} from '../../layouts/card-layout/card-layout.compon
 import { TableComponent } from '../../genericComponents/table/table.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CarListingsService } from '../../services/carListings/carListings.service';
 
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  const homeComp = new HomeComponent(CarListingsService);
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         declarations: [
@@ -56,15 +54,9 @@ describe('HomeComponent', () => {
       fixture = TestBed.createComponent(HomeComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
-      spyOn(homeComp, 'getFilterOptions');
     });
 
     it('should create', () => {
       expect(component).toBeTruthy();
     });
-  // see if filter service was called
-  it(`should get the filter options`, fakeAsync(() => {
-    homeComp.ngOnInit();
-    expect(homeComp.getFilterOptions).toHaveBeenCalled();
-  }));
 });

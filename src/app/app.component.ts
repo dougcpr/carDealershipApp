@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {
-  MatButtonModule,
-  MatCardModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatOptionModule, MatSelectModule,
-  MatToolbarModule
-} from '@angular/material';
 
 @Component({
   selector: 'app-root',
